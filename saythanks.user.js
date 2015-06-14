@@ -103,7 +103,7 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                         if($("signed")!=null) setTimeout("document.getElementById('signed').click()",url_delay[lj]); 
                         if (/^\/?t\/([0-9]+)/.test(lURL)&&$("ajaxthanks").disabled == false)setTimeout("document.getElementById('ajaxthanks').click()",url_delay[lj]);
                     }else if(lj==2){
-                        if(document.getElementsByName('sign')[0]!=null&&document.getElementsByName('sign')[0].disabled == false) setTimeout("document.getElementsByName('sign')[0].click()",url_delay[lj]); 
+                        if(document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText!="已签到") setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]); 
                         if (/^\/?t-([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);              
                     }else{
                         if(yURL=="hdqueen.com"&&($("yiqiandao")==null||$("yiqiandao").innerText!="[已签到]")) setTimeout("qiandao('qiandao')",url_delay[lj]); 

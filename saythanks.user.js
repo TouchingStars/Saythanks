@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         saythanks
 // @namespace    http://your.homepage/
-// @version      0.1
+// @version      0.2
 // @description  enter something useful
 // @author       shuishui
 // @grant        none
@@ -15,6 +15,8 @@
 // @match        http*://www.hdcity.org/*
 // @match        http*://hdqueen.com/*
 // @match        http*://hdtime.org/*
+// @match        http*://www.seehd.co/*
+// @match        http*://pt.gztown.net/*
 // ==/UserScript==
 
 //SET TIMEOUT BETWEEN TWO TORRENTS
@@ -73,7 +75,7 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
     if (/^[^\/]+/.test(yURLPATH))yURLPATH='/'+yURLPATH;
     var lURL=location.pathname+location.search;  //alert(yURLPATH);
     for(var lj=0;lj<url_string.length;lj++){
-        if(yURL==url_string[lj]){
+        if(yURL==url_string[lj]||yURL.replace(/^www\./i,'')==url_string[lj].replace(/^www\./i,'')){
             if(_yFlag==-1){ 
                 returnI=['']
                 if(lj==0){
@@ -103,7 +105,7 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                         if($("signed")!=null) setTimeout("document.getElementById('signed').click()",url_delay[lj]); 
                         if (/^\/?t\/([0-9]+)/.test(lURL)&&$("ajaxthanks").disabled == false)setTimeout("document.getElementById('ajaxthanks').click()",url_delay[lj]);
                     }else if(lj==2){
-                        if(document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText!="已签到") setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]); 
+                        if(document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText!="已签到") {setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]);} 
                         if (/^\/?t-([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);              
                     }else{
                         if(yURL=="hdqueen.com"&&($("yiqiandao")==null||$("yiqiandao").innerText!="[已签到]")) setTimeout("qiandao('qiandao')",url_delay[lj]); 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         saythanks
 // @namespace    http://your.homepage/
-// @version      0.2
+// @version      0.1
 // @description  enter something useful
 // @author       shuishui
 // @grant        none
@@ -11,7 +11,7 @@
 // @match        http*://chdbits.org/*
 // @match        http*://pt.sjtu.edu.cn/*
 // @match        http*://hdsky.me/*
-// @match        http*://hdcity.org/*
+// @match        http*://hdcity.leniter.org/*
 // @match        http*://www.hdcity.org/*
 // @match        http*://hdqueen.com/*
 // @match        http*://hdtime.org/*
@@ -31,7 +31,7 @@ var _THKPH_='/thanks.php',_TIDN_='id=';
 var url_flag=-1,j=0,thankPath,idName_,url_string = new Array();
 url_string[0]='hdwing.com';
 url_string[1]='totheglory.im';
-url_string[2]='hdcity.org';
+url_string[2]='hdcity.leniter.org';
 url_string[3]='hdsky.me';
 url_string[4]='http://chdbits.org';
 url_string[5]='pt.sjtu.edu.cn';

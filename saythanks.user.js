@@ -3,7 +3,8 @@
 // @namespace    http://your.homepage/
 // @version      0.1
 // @description  enter something useful
-// @updateURL  https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
+// @updateURL   https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
+// @downloadURL https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
 // @author       shuishui
 // @grant        none
 // @match        http*://hdwing.com/*

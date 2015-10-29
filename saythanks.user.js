@@ -3,6 +3,7 @@
 // @namespace    http://your.homepage/
 // @version      0.1
 // @description  enter something useful
+// @updateURL  https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
 // @author       shuishui
 // @grant        none
 // @match        http*://hdwing.com/*
@@ -105,7 +106,8 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                         if($("signed")!=null) setTimeout("document.getElementById('signed').click()",url_delay[lj]); 
                         if (/^\/?t\/([0-9]+)/.test(lURL)&&$("ajaxthanks").disabled == false)setTimeout("document.getElementById('ajaxthanks').click()",url_delay[lj]);
                     }else if(lj==2){
-                        if(document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText!="已签到") {setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]);} 
+                        var cktext=document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText;
+                        if(cktext!="已签到"&&cktext!="Checked in") {setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]);} 
                         if (/^\/?t-([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);              
                     }else{
                         if(yURL=="hdqueen.com"&&($("yiqiandao")==null||$("yiqiandao").innerText!="[已签到]")) setTimeout("qiandao('qiandao')",url_delay[lj]); 

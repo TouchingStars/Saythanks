@@ -14,7 +14,7 @@
 // @match        http*://pt.sjtu.edu.cn/*
 // @match        http*://hdsky.me/*
 // @match        http*://hdcity.leniter.org/*
-// @match        http*://www.hdcity.org/*
+// @match        http*://hdcity.top/*
 // @match        http*://hdqueen.com/*
 // @match        http*://hdtime.org/*
 // @match        http*://www.seehd.co/*
@@ -108,8 +108,8 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                         if (/^\/?t\/([0-9]+)/.test(lURL)&&$("ajaxthanks").disabled == false)setTimeout("document.getElementById('ajaxthanks').click()",url_delay[lj]);
                     }else if(lj==2){
                         var cktext=document.getElementById('bottomnav').childNodes[0].childNodes[1].innerText;
-                        if(cktext!="已签到"&&cktext!="Checked in") {setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]);} 
-                        if (/^\/?t-([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);              
+                        if(/已签到/.test(cktext)==false&&/Checked\sin/i.test(cktext)==false) {setTimeout("document.getElementById('bottomnav').childNodes[0].childNodes[1].click()",url_delay[lj]);} 
+                        if (/^\/?t-([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]); 
                     }else{
                         if(yURL=="hdqueen.com"&&($("yiqiandao")==null||$("yiqiandao").innerText!="[已签到]")) setTimeout("qiandao('qiandao')",url_delay[lj]); 
                         if(yURL=="hdtime.org"&&$("qiandao")!=null) setTimeout("qiandao()",url_delay[lj]); 

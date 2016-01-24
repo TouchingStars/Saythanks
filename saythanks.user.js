@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
 // @author       shuishui
 // @grant        none
-// @match        http*://hdwing.com/*
+// @match        http*://hdchina.club/*
 // @match        http*://totheglory.im/*
 // @match        http*://www.nexushd.org/*
 // @match        http*://chdbits.org/*
@@ -31,7 +31,7 @@ var _NONETWORKDELAY_=1;
 var _THKPH_='/thanks.php',_TIDN_='id=';
 
 var url_flag=-1,j=0,thankPath,idName_,url_string = new Array();
-url_string[0]='hdwing.com';
+url_string[0]='hdchina.club';
 url_string[1]='totheglory.im';
 url_string[2]='hdcity.leniter.org';
 url_string[3]='hdsky.me';
@@ -41,9 +41,9 @@ url_string[5]='pt.sjtu.edu.cn';
 url_string[6]='www.nexushd.org';
 url_string[7]=_THKPH_;
 
-var url_delay  = new Array( _BADNETWORKDELAY_,_GOODNETWORKDELAY_,'', _BADNETWORKDELAY_);
+var url_delay  = new Array("",_GOODNETWORKDELAY_,'', "");
 var url_thxpath = new Array('','/ajaxThanks.php','/thanks');
-var url_tid  = new Array('torrentid=','tid=');
+var url_tid  = new Array('','tid=');
 //var url_thxpath = new Array('_ajax_thanks.php','/ajaxThanks.php');
 //var url_tid  = new Array('type=2&torrentid=','tid=');
 for(j=0;j<url_string.length;j++){
@@ -80,10 +80,10 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
         if(yURL==url_string[lj]||yURL.replace(/^www\./i,'')==url_string[lj].replace(/^www\./i,'')){
             if(_yFlag==-1){ 
                 returnI=['']
-                if(lj==0){
-                    if(/(<h2>.+<\/h2>)/i.test(_yVar)) {
-                        returnI=[_yVar.match(/<h2>(.+)<\/h2>/i)[1]+'(^_^)'];
-                    }else if(/(ID)/i.test(_yVar)) returnI=[_yVar.match(/.*ID.*/i)[0]+'(^_^)'];
+                if(lj==-1){
+                    //if(/(<h2>.+<\/h2>)/i.test(_yVar)) {
+                    //    returnI=[_yVar.match(/<h2>(.+)<\/h2>/i)[1]+'(^_^)'];
+                   //}else if(/(ID)/i.test(_yVar)) returnI=[_yVar.match(/.*ID.*/i)[0]+'(^_^)'];
                     //returnI=_yVar.match(/(<Code>.+<\/Code>)/i);
                     //if(returnI!=null&&returnI[0].replace(/(.*<Code>)|(<\/Code>)/gi,'')=='100'){returnI[0]='OK!';}else returnI[0]='';
                 }else if(lj==1){
@@ -101,8 +101,10 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                 if(idName_=="") idName_=_TIDN_;
                 if (_yFlag==1) {
                     if(lj==0){ 
-                        if ($("sign_button")!=null&&$("sign_button").disabled == false&&$("sign_button").value=='签　到')setTimeout("document.getElementById('sign_button').click()",url_delay[lj]);
-                        if (/^\/?details.php\?id=([0-9]+)/.test(lURL)&&$("thanksbutton").disabled == false)setTimeout("document.getElementById('thanksbutton').click()",url_delay[lj]);
+                        var sigbutt=document.createElement("a");
+                        sigbutt=document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[1];
+                        if (/签 到/.test(sigbutt.innerText))setTimeout("document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[1].click()",url_delay[lj]);
+                        if (/^\/?details.php\?id=([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);
                     }else if(lj==1){
                         if($("signed")!=null) setTimeout("document.getElementById('signed').click()",url_delay[lj]); 
                         if (/^\/?t\/([0-9]+)/.test(lURL)&&$("ajaxthanks").disabled == false)setTimeout("document.getElementById('ajaxthanks').click()",url_delay[lj]);

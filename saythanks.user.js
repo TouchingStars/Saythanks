@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/TouchingStars/Saythanks/raw/master/saythanks.user.js
 // @author       shuishui
 // @grant        none
-// @match        http*://hdchina.club/*
+// @match        http*://hdchina.org/*
 // @match        http*://totheglory.im/*
 // @match        http*://www.nexushd.org/*
 // @match        http*://chdbits.org/*
@@ -31,7 +31,7 @@ var _NONETWORKDELAY_=1;
 var _THKPH_='/thanks.php',_TIDN_='id=';
 
 var url_flag=-1,j=0,thankPath,idName_,url_string = new Array();
-url_string[0]='hdchina.club';
+url_string[0]='hdchina.org';
 url_string[1]='totheglory.im';
 url_string[2]='hdcity.leniter.org';
 url_string[3]='hdsky.me';

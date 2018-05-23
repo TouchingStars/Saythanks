@@ -102,8 +102,8 @@ function setVarofURL_(_yURL,_yVar,_yFlag){
                 if (_yFlag==1) {
                     if(lj==0){ 
                         var sigbutt=document.createElement("a");
-                        sigbutt=document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[1];
-                        if (/签 到/.test(sigbutt.innerText))setTimeout("document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[1].click()",url_delay[lj]);
+                        sigbutt=document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[0];
+                        if (/签 到/.test(sigbutt.innerText))setTimeout("document.getElementById('site_header').getElementsByTagName('div')[3].getElementsByTagName('a')[0].click()",url_delay[lj]);
                         if (/^\/?details.php\?id=([0-9]+)/.test(lURL)&&$("saythanks").disabled == false)setTimeout("document.getElementById('saythanks').click()",url_delay[lj]);
                     }else if(lj==1){
                         if($("signed")!=null) setTimeout("document.getElementById('signed').click()",url_delay[lj]); 
